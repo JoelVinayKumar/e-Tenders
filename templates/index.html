@@ -1,0 +1,143 @@
+{% block header %}
+	<title>Practicum Project</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+	<script src="{{ url_for('static', filename='js/jquery.min.jss') }}"></script>
+	<script src="{{url_for('static', filename='js/jquery.scrollex.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/jquery.scrolly.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/skel.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/util.js')}}"></script>
+	<script src="{{url_for('static', filename='js/main.js')}}"></script>
+	<style>
+    .sticker {
+      position: fixed;
+      bottom: 2em;
+      right: 2em;
+      text-decoration: none;
+      color: white;
+      background-color: #6c5ce7;
+      font-size: 30px;
+      padding: 0em 0.4em;
+      display: visible;
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
+    }
+    .sticker:hover {
+      background-color:#e84393;
+    }
+  </style>
+{% endblock %}
+
+{% block body %}
+<div id="wrapper">
+
+	<!-- Header -->
+		<header id="header" class="alt">
+			<span class="logo"><img src="{{ url_for('static', filename='images/logo.svg') }}" alt="" /></span>
+			<h1>Pheasant</h1>
+			{% if not session.logged_in %}
+			<p>Never miss any of the tender. A portal<br />
+			built by <a href="https://twitter.com/joelvinaykumar">@joelvinaykumar</a></p>
+			{% endif %}
+			{% if session.logged_in %}
+			<p>Welcome, {{ session.log_user }}<br>
+			Check <a href="/tenders">latest tenders</a> </p>
+			<a href="/logout">Sign Out</a>
+			{% endif %}
+		</header>
+	<!-- Nav -->
+		<nav id="nav">
+			<ul>
+				<li><a href="#intro" class="active">Introduction</a></li>
+				<li><a href="#first">Features</a></li>
+				<li><a href="/sign_up">Signup</a></li>
+				<li><a href="/login">Sign In</a></li>
+			</ul>
+		</nav>
+	<!-- Main -->
+		<div id="main">
+			<!-- Introduction -->
+				<section id="intro" class="main">
+					<div class="spotlight">
+						<div class="content">
+							<header class="major">
+								<h2>Oh Lah! Bien Vinedos!</h2>
+							</header>
+							<p>Do you know that the earlier you know about the tender, the more is the chance for you to win that bid? We're here for the same exact reason to help you. </p>
+						</div>
+						<span class="image"><img src="{{ url_for('static', filename='images/pic01.png') }}" alt="" /></span>
+					</div>
+				</section>
+			<!-- First Section -->
+				<section id="first" class="main special">
+					<header class="major">
+						<h2>Features</h2>
+					</header>
+					<ul class="features">
+						<li>
+							<span class="icon major style1 fa-code"></span>
+							<h3>Efficient Code </h3>
+							<p>Whole software is written in python. We've put our best to give you smooth experience.</p>
+						</li>
+						<li>
+							<span class="icon major style3 fa-copy"></span>
+							<h3>Copyable information</h3>
+							<p>We believe information should be handed out and passed out. There is no use in information that cannot be passed out. In limits of your subscription, the data is free for you to use.</p>
+						</li>
+						<li>
+							<span class="icon major style5 fa-diamond"></span>
+							<h3>Eay filtering</h3>
+							<p>Everyday, we receive data from the e-tenders website. Now, the part where we help is filtering those emails for you.</p>
+						</li>
+					</ul>
+				</section>
+				<a class="sticker icon fa-home" href="/"></a>
+			<!-- Second Section -->
+		</div>
+	<!-- Footer -->
+		<footer id="footer">
+			<section>
+				<h2>License</h2>
+				<p>We're using Creative Commons license to make this project available to all.</p>
+				<ul class="actions">
+					<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+				</ul>
+			</section>
+			<section>
+				<h2>Team Members</h2>
+				<dl class="alt">
+					<dt>Joel</dt>
+					<dd>20176109 &bull; joelvinaykumar@riseup.net</dd>
+					<dt>Alekhya</dt>
+					<dd>20176049 &bull; alekhyagamini24@gmail.com</dd>
+					<dt>Venkatesh</dt>
+					<dd>20176056 &bull; avenkatesh1004@gmail.com</dd>
+				</dl>
+				<ul class="icons">
+					Fork our code @  
+					<li><a href="https://code.swecha.org/pheasant/Pheasant/" class="icon fa-gitlab alt" style="margin-left: 14px"><span class="label">Gitlab</span></a></li>
+				</ul>
+			</section>
+		</footer>
+
+</div>
+<script src="{{url_for('static', filename='js/jquery.min.jss') }}"></script>
+<script src="{{url_for('static', filename='js/jquery.scrollex.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/jquery.scrolly.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/skel.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/util.js')}}"></script>
+<script src="{{url_for('static', filename='js/main.js')}}"></script>
+		<!-- Scripts -->
+			
+{% endblock %}
+
+{% block scripts %}
+	<script src="{{ url_for('static', filename='js/jquery.min.jss') }}"></script>
+	<script src="{{url_for('static', filename='js/jquery.scrollex.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/jquery.scrolly.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/skel.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/util.js')}}"></script>
+	<script src="{{url_for('static', filename='js/main.js')}}"></script>
+{% endblock %}

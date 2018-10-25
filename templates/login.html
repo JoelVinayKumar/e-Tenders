@@ -1,0 +1,104 @@
+<html>
+	<head>
+		<title>Sign Up</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+		<style>
+		    .sticker {
+		      position: fixed;
+		      bottom: 2em;
+		      right: 2em;
+		      text-decoration: none;
+		      color: white;
+		      background-color: #6c5ce7;
+		      font-size: 30px;
+		      padding: 0em 0.4em;
+		      display: visible;
+		      border-radius: 50%;
+		      height: 50px;
+		      width: 50px;
+		    }
+		    .sticker:hover {
+		      background-color:#e84393;
+		    }
+		    .error{
+		    	background: #d63031;
+		    	padding: 10px 10px 10px 10px;
+		    	border-radius: 5px;
+		    	width: 300px;
+		    	margin: auto;
+		    	color: #fff;
+		    }
+	    </style>
+	</head>
+	<body>
+	<!-- Wrapper -->
+		<div id="wrapper">
+			<!-- Header -->
+				<header id="header">
+					<h1>Log In</h1>
+					{% if error %}
+					<div class="error">
+						{{ error }}
+					</div>
+					{% endif %}
+				</header>
+			<!-- Main -->
+				<div id="main">
+				<!-- Content -->
+					<section id="content" class="main">
+						<form method="post" action="/login">
+							<div class="row uniform">
+								<div class="6u 12u$(xsmall)">
+									<input type="email" name="email" id="demo-name" value="" placeholder="Name" />
+								</div>
+								<div class="6u$ 12u$(xsmall)">
+									<input type="password" name="pwd" id="demo-email" value="" placeholder="Email" />
+								</div>
+								<center class="12u$">
+									<ul class="actions">
+										<li><input type="submit" value="Sign In" class="special" style="background:#0984e3" /></li>
+									</ul>
+								</center>
+							</div>
+						</form>
+					</section>
+					<a class="sticker icon fa-home" href="/"></a>
+				</div>
+			<!-- Footer -->
+				<footer id="footer">
+					<section>
+						<h2>License</h2>
+						<p>We're using Creative Commons license to make this project available to all.</p>
+						<ul class="actions">
+							<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+						</ul>
+					</section>
+					<section>
+						<h2>Team Members</h2>
+						<dl class="alt">
+							<dt>Joel</dt>
+							<dd>20176109 &bull; joelvinaykumar@riseup.net</dd>
+							<dt>Alekhya</dt>
+							<dd>20176049 &bull; alekhyagamini24@gmail.com</dd>
+							<dt>Venkatesh</dt>
+							<dd>20176056 &bull; avenkatesh1004@gmail.com</dd>
+						</dl>
+						<ul class="icons">
+							Fork our code @  
+							<li><a href="https://code.swecha.org/pheasant/Pheasant/" class="icon fa-gitlab alt" style="margin-left: 14px"><span class="label">Gitlab</span></a></li>
+						</ul>
+					</section>
+				</footer>
+
+		</div>
+		<script src="{{url_for('static', filename='js/jquery.min.jss') }}"></script>
+		<script src="{{url_for('static', filename='js/jquery.scrollex.min.js')}}"></script>
+		<script src="{{url_for('static', filename='js/jquery.scrolly.min.js')}}"></script>
+		<script src="{{url_for('static', filename='js/skel.min.js')}}"></script>
+		<script src="{{url_for('static', filename='js/util.js')}}"></script>
+		<script src="{{url_for('static', filename='js/main.js')}}"></script>
+
+	</body>
+</html>

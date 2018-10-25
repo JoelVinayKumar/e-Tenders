@@ -1,0 +1,31 @@
+{% block header %}
+	<title>Practicum Project</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+	<script src="{{ url_for('static', filename='js/jquery.min.jss') }}"></script>
+	<script src="{{url_for('static', filename='js/jquery.scrollex.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/jquery.scrolly.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/skel.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/util.js')}}"></script>
+	<script src="{{url_for('static', filename='js/main.js')}}"></script>
+	<style>
+    .sticker {
+      position: fixed;
+      bottom: 2em;
+      right: 2em;
+      text-decoration: none;
+      color: white;
+      background-color: #6c5ce7;
+      font-size: 30px;
+      padding: 0em 0.4em;
+      display: visible;
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
+    }
+    .sticker:hover {
+      background-color:#e84393;
+    }
+  </style>
+{% endblock %}
