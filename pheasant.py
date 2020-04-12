@@ -15,7 +15,7 @@ app.config['PASSWORD'] = '12345'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///practicum.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 smtpObj = smtplib.SMTP('smtp.sendgrid.net',587)
-smtpObj.login("apikey", "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")
+smtpObj.login("apikey", "")
 
 db=SQLAlchemy(app)
 
